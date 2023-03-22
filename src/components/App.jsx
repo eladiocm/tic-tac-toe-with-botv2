@@ -1,11 +1,11 @@
-import { useState } from "react"
-import { Square } from "./Square"
-import { WinnerModal } from "./WinnerModal"
-import { TURNS } from "@/utility/constants"
-import { checkEndGame, checkWinnerForm } from "@/utility/board"
+import { useState } from 'react'
+import { Square } from './Square'
+import { WinnerModal } from './WinnerModal'
+import { TURNS } from '@/utility/constants'
+import { checkEndGame, checkWinnerForm } from '@/utility/board'
 import confetti from 'canvas-confetti'
 
-export function App() {
+export function App () {
   const [board, setBoard] = useState(Array(9).fill(null))
   const [turn, setTurn] = useState(TURNS.X)
   const [winner, setWinner] = useState(null) // null es que no hay ganador, false hay empate
