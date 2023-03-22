@@ -7,12 +7,12 @@ import confetti from 'canvas-confetti'
 
 export function App () {
   const [board, setBoard] = useState(Array(9).fill(null))
-  const [turn, setTurn] = useState(TURNS.X)
+  const [turn, setTurn] = useState('x')
   const [winner, setWinner] = useState(null) // null es que no hay ganador, false hay empate
 
   const resetGame = () => {
     setBoard(Array(9).fill(null))
-    setTurn(TURNS.X)
+    setTurn('x')
     setWinner(null)
 
     /* resetGameStorage() */
@@ -28,7 +28,7 @@ export function App () {
     setBoard(newBoard)
 
     //* cambiar el turno
-    const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
+    const newTurn = turn === 'x' ? 'o' : 'x'
     setTurn(newTurn)
 
     /* //* guardar aquí partida en el localStorage
@@ -47,6 +47,11 @@ export function App () {
     }
   }
 
+  const handleTurnWrite = (square) => {
+    if (square === 'x') return TURNS.X
+    if (square === 'o') return TURNS.O
+  }
+
   return (
     <main className='board'>
       <h1>Tic Tac Toe</h1>
@@ -60,7 +65,7 @@ export function App () {
                 index={index}
                 updateBoard={updateBoard}
               >
-                {square}
+                {handleTurnWrite(square)}
               </Square>
             )
           })
@@ -68,10 +73,10 @@ export function App () {
       </section>
       <p>Es el turno de :</p>
       <section className='turn'>
-        <Square isSelected={turn === TURNS.X}>
+        <Square isSelected={turn === 'x'}>
           {TURNS.X}
         </Square>
-        <Square isSelected={turn === TURNS.O}>
+        <Square isSelected={turn === 'o'}>
           {TURNS.O}
         </Square>
       </section>

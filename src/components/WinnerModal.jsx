@@ -1,3 +1,4 @@
+import { TURNS } from '@/utility/constants'
 import { Square } from './Square'
 
 export const WinnerModal = ({ winner, resetGame }) => {
@@ -11,7 +12,14 @@ export const WinnerModal = ({ winner, resetGame }) => {
         <h2>{winnerText}</h2>
 
         <header className='win'>
-          {winner && <Square>{winner}</Square>}
+          {winner
+            ? <Square>{winner === 'x' ? TURNS.X : TURNS.O}</Square>
+            : (
+              <>
+                <Square>{TURNS.X}</Square>
+                <Square>{TURNS.O}</Square>
+              </>
+              )}
         </header>
 
         <footer>
