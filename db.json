@@ -1,0 +1,29 @@
+{
+  "partida": {
+    "partidaId": [
+      "5a5c6f9b4d749d008e07e695"
+    ],
+    "estadoTablero": [
+      "x",
+      null,
+      null,
+      null,
+      "o",
+      "o",
+      null,
+      null,
+      "x"
+    ],
+    "siguienteMovimiento": {
+      "caracter": "o",
+      "posicion": 4
+    },
+    "historial": [
+      {
+        " caracter ": "x",
+        " posicion ": 0
+      }
+    ],
+    "campoPersonalizado1": "valorPersonalizado1"
+  }
+}

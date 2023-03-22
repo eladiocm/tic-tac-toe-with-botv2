@@ -17,6 +17,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "json-server": "^0.17.3",
     "standard": "^17.0.0"
   },
   "eslintConfig": {
