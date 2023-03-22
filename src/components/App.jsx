@@ -6,15 +6,8 @@ import { checkEndGame, checkWinnerForm } from "@/utility/board"
 import confetti from 'canvas-confetti'
 
 export function App() {
-  const [board, setBoard] = useState(() => {
-    const boardFromStorage = window.localStorage.getItem('board')
-    if (boardFromStorage) return JSON.parse(boardFromStorage)
-    return Array(9).fill(null)
-  })
-  const [turn, setTurn] = useState(() => {
-    const turnFromStorage = window.localStorage.getItem('turn')
-    return turnFromStorage ?? TURNS.X
-  })
+  const [board, setBoard] = useState(Array(9).fill(null))
+  const [turn, setTurn] = useState(TURNS.X)
   const [winner, setWinner] = useState(null) // null es que no hay ganador, false hay empate
 
   const resetGame = () => {
