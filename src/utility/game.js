@@ -1,7 +1,7 @@
 const board = ['-', '-', '-', '-', '-', '-', '-', '-', '-']
 
-const humPlayer = null
-const aiPlayer = null
+/* const humPlayer = null
+const aiPlayer = null */
 
 // Función para verificar si hay un ganador
 function checkWinner (board, player) {
